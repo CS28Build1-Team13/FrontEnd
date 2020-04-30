@@ -10,6 +10,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+      < img src = '/header.png' />
         <Route exact path='/' component={Login}/>
         <Route exact path='/register' component={Register}/>
         <PrivateRoute exact path='/world-map' component={WorldMap}/>

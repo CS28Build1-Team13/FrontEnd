@@ -1,6 +1,9 @@
 .App {
   align-items: center;
-  background: white;
+  background-image: url(./images/bluefire.jpg);
+  background-size: 2000px 1300px;
+  background-repeat: no-repeat;
+  color: white;
   display: flex;
   flex-direction: column;
   font-size: 2rem;
@@ -23,7 +26,7 @@
 form {
   align-items: center;
   align-content: space-between;
-  background: #ffffff;
+  background: transparent;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -42,7 +45,7 @@ input {
 }
 
 button {
-  background: firebrick;
+  background: #320b80;
   border: none;
   color: whitesmoke;
   cursor: pointer;
@@ -61,7 +64,8 @@ button {
 
 button:hover,
 button:focus {
-    background: darkred;
+    background: #dac7fd;
+    color: black;
 }
 
 button:active {
@@ -69,7 +73,7 @@ button:active {
 }
 
 .link {
-  color: #0069ed;
+  color: #ffffff;
 }
 .link:hover,
 .link:focus {
@@ -83,4 +87,9 @@ button:active {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.map-container {
+  
 }
