@@ -19,8 +19,8 @@ const WorldMap = () => {
                     width:'10px',
                     height:'10px',
                     borderRadius:'100%',
-                    bottom:'0',
-                    left:'0',
+                    bottom:0,
+                    left:0,
                     background:'goldenrod'
                 }}
             >

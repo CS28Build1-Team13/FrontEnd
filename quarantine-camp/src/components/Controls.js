@@ -16,18 +16,23 @@ const Controls = () => {
 
 
   const unabbreviate = (char) => {
+    let count = 0
     if (char === 'n' && parseInt(character.style.bottom) < 240) {
         setCardinal('north')
         character.style.bottom=parseInt(character.style.bottom)+10+'px';
     }else if (char === 's' && parseInt(character.style.bottom) > 0 ) {
         setCardinal('south')
         character.style.bottom=parseInt(character.style.bottom)-10+'px';
-    } else if (char === 'e' && parseInt(character.style.left) < 240 ) {
-        setCardinal('east')
-        character.style.left=parseInt(character.style.left)+10+'px';
     } else if (char === 'w' && parseInt(character.style.left) > 0 ) {
         character.style.left=parseInt(character.style.left)-10+'px';
         setCardinal('west')
+    } else if (char === 'e' && parseInt(character.style.left) < 240 ) {
+        setCardinal('east')
+        character.style.left=parseInt(character.style.left)+10+'px';
+    } else if (char === 'e' && parseInt(character.style.left) == 240 && parseInt(character.style.bottom)!= 240 ) {
+        setCardinal('east')
+        character.style.left=parseInt(character.style.left)-240+'px';
+        character.style.bottom=parseInt(character.style.bottom)+10+'px';
     }
   };
 
