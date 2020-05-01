@@ -1,11 +1,35 @@
 import React from 'react';
-//import axiosWithAuth from '../utilities/axiosWithAuth';
 
 const WorldMap = () => {
 
     return (
-        <div className='map-container'>
-            <h1>Welcome to Quarantine Camp</h1>
+        <div 
+            className='map-container'
+            style={{
+                position:'relative',
+                width:'275px',
+                height:'275px',
+                background:'black',
+                borderTop:'1px solid white',
+                borderBottom:'1px solid white',
+                borderLeft:'1px solid white',
+            }}>
+            <div
+                id='character'
+                className='character-position'
+                style={{
+                    position:'absolute',
+                    width:'10px',
+                    height:'10px',
+                    borderRadius:'100%',
+                    margin:'1px',
+                    bottom:0,
+                    left:0,
+                    background:'goldenrod',
+                    border:'1px solid brown'
+                }}
+            >
+            </div>
         </div>
     )
 };
