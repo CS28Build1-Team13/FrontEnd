@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import axiosWithAuth from '../utilities/axiosWithAuth';
 import WorldMap from './WorldMap';
 
@@ -35,15 +35,14 @@ const Controls = () => {
         character.style.bottom=parseInt(character.style.bottom)+10+'px';
     }
   };
-
-  const addRooms = () => {
-    return axiosWithAuth()
+useEffect(() => {
+    axiosWithAuth()
       .get('https://quarantine-camp.herokuapp.com/api/adv/init/')
       .then(res => {
           setData(res.data);
       })
       .catch(err => console.log(err));
-  };
+  });
 
   const move = (e, cardinal) => {
     e.preventDefault();
