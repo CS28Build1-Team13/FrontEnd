@@ -7,8 +7,8 @@ const WorldMap = () => {
             className='map-container'
             style={{
                 position:'relative',
-                width:'250px',
-                height:'250px',
+                width:'275px',
+                height:'275px',
                 background:'black',
                 borderTop:'1px solid white',
                 borderBottom:'1px solid white',
