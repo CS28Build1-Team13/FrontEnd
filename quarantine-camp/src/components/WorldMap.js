@@ -1,66 +1,32 @@
-import React, { useState, useEffect }  from 'react';
-import axiosWithAuth from '../utilities/axiosWithAuth';
-
+import React from 'react';
 
 const WorldMap = () => {
 
-  const [data, setData] = useState({});
-
-  const [direction, setDirection] = useState('');
-
-  const addRooms = () => {
-    return axiosWithAuth()
-      .get('https://quarantine-camp.herokuapp.com/api/adv/init/')
-      .then(res => {
-          console.log("This is the data:", res.data)
-          setData(res.data);
-        //   setName(res.data.name);
-        //   setRooms(res.data.title);
-      })
-      .catch(err => console.log(err));
-  };
-
-
-  const move = (e, cardinal) => {
-    e.preventDefault();
-    const direction = { direction: `${cardinal}` };
-
-    return axiosWithAuth()
-      .post('adv/move/', direction)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log(err));
-  };
-  const handleChange = e => {
-    setDirection(e.target.value);
-  };
-
-    useEffect(() => {
-    addRooms();
-  }, []);
-
-
     return (
-         <div className='map'>
-             <div>
-                <h1>HELLO, {data.name}</h1>
-                <p>Location: {data.title}</p>
-                <p>Description: {data.description}</p>
-             </div>
-             
-             <div className="box command-input">
-                <form onSubmit={e => move(e, direction)}>
-                    <input
-                    onChange={handleChange}
-                    type="text"
-                    placeholder="Type commands here:"
-                    value={direction}
-                    />
-                </form>
+        <div 
+            className='map-container'
+            style={{
+                position:'relative',
+                width:'250px',
+                height:'250px',
+                background:'black'    
+            }}>
+            <div
+                id='character'
+                className='character-position'
+                style={{
+                    position:'absolute',
+                    width:'10px',
+                    height:'10px',
+                    borderRadius:'100%',
+                    bottom:'0',
+                    left:'0',
+                    background:'goldenrod'
+                }}
+            >
             </div>
-
-
         </div>
-    )}
+    )
+};
+
 export default WorldMap;
